@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZjRcDvU2SzcCPT0u61CrgI9SlRWBMRWGg4ODzWUqhMFH3Zz4cHkoLsr15F30i0/G0UeqHEfZnfveZTDW8mFThA==",
+  "dgSpecHash": "/7FLQSxlJQVUoDAu8NLdjz6sqPXyZk6elrbay5PN9wbbSxUNshW85UY8BpwmQqdnAmWYdZF/ssRLwfVSZvqRtA==",
   "success": true,
-  "projectFilePath": "F:\\Udemy\\CSharp\\pizza\\pizza\\pizza.csproj",
+  "projectFilePath": "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\pizza.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Udemy\\CSharp\\pizza\\pizza\\pizza.csproj": {}
+    "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\pizza.csproj": {}
   },
   "projects": {
-    "F:\\Udemy\\CSharp\\pizza\\pizza\\pizza.csproj": {
+    "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\pizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Udemy\\CSharp\\pizza\\pizza\\pizza.csproj",
+        "projectUniqueName": "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\pizza.csproj",
         "projectName": "pizza",
-        "projectPath": "F:\\Udemy\\CSharp\\pizza\\pizza\\pizza.csproj",
+        "projectPath": "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\pizza.csproj",
         "packagesPath": "C:\\Users\\ti-yo\\.nuget\\packages\\",
-        "outputPath": "F:\\Udemy\\CSharp\\pizza\\pizza\\obj\\",
+        "outputPath": "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
