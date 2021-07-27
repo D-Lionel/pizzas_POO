@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
+using System.IO;
+using System.Net;
 
 namespace pizza
 {
@@ -46,10 +49,10 @@ namespace pizza
     {
 
 
-        protected string nom;
-        protected float prix { get; set; }
+        public string nom { get; protected set; }
+        public float prix { get; protected set; }
         public bool vegetarienne { get; private set; }
-        public List<string> ingredients { get; set; }
+        public List<string> ingredients { get; protected set; }
 
         public Pizza(string nom, float prix, bool vegetarienne, List<string> ingredients)
         {
@@ -99,57 +102,90 @@ namespace pizza
     }
     class Program
     {
-        static void Main(string[] args)
+        static List<Pizza> GetPizzasFromCode()
         {
-
             var listePizzas = new List<Pizza>
             {
                 new Pizza("4 frommages", 11.5f, true, new List<string>{ "emmental", "bleu"}),
                 new Pizza("orientale", 9f, false, new List<string>{ "chorizo", "merguez"}),
                 new Pizza("reine", 12f, false, new List<string>{ "jambon", "champignon", "emmental"}),
                 new Pizza("végétarienne", 7.6f, true, new List<string>{ "emmental", "tomates", "aubergines"}),
-                new PizzaPersonnalisee(),
-                new PizzaPersonnalisee(),
+                //new PizzaPersonnalisee(),
+                //new PizzaPersonnalisee(),
 
             };
+            return listePizzas;
+        }
 
-            //listePizzas = listePizzas.OrderBy(p => p.prix).ToList();
-
-
-            //Afficher la pizza la moins chère et la plus chère :
-
-            /*float PrixMin = listePizzas[0].prix;
-            float PrixMax = listePizzas[0].prix;
-            string pizzPrixMin = null;
-            string pizzPrixMax = null;
-
-            foreach(var pizzaP in listePizzas)
+        static List<Pizza> GetPizzasFromFile(string filename)
+        {
+            string json = null;
+            try
             {
-                if (PrixMin > pizzaP.prix)
-                {
-                    pizzPrixMin = pizzaP.nom;
-                    PrixMin = pizzaP.prix;
-                }
-                if (PrixMax < pizzaP.prix)
-                {
-                    pizzPrixMax = pizzaP.nom;
-                    PrixMax = pizzaP.prix;
-                }
+                json = File.ReadAllText("listePizzas.json");
             }
-            Console.WriteLine($"La pizza la moins chère est : {pizzPrixMin}");
-            Console.WriteLine($"La pizza la plus chère est : {pizzPrixMax}");
-            */
+            catch
+            {
+                Console.WriteLine("Erreur de lecture du ficher" + filename);
+                return null;
+            }
 
-            //listePizzas = listePizzas.Where(pizza => pizza.vegetarienne).ToList();
-            //listePizzas = listePizzas.Where(p => p.ingredients.Where(i => i.ToLower().Contains("tomate")).ToList().Count > 0).ToList();
+            List<Pizza> listePizzas = null;
+            try
+            {
+                listePizzas = JsonConvert.DeserializeObject<List<Pizza>>(json);
+
+            }
+            catch
+            {
+                Console.WriteLine("Erreur : les données json ne sont pas valides");
+                return null;
+            }
+
+            return listePizzas;
+        }
+
+        static void GenerateJsonFile(List<Pizza> listePizzas, string filename)
+        {
+            var json = JsonConvert.SerializeObject(listePizzas);
+            File.WriteAllText(filename, json);
+        }
+
+
+        static List<Pizza> GetPizzasFromUrl(string url)
+        {
+            var webclient = new WebClient();
+            string json = webclient.DownloadString(url);
+
+            List<Pizza> listePizzas = null;
+            try
+            {
+                listePizzas = JsonConvert.DeserializeObject<List<Pizza>>(json);
+
+            }
+            catch
+            {
+                Console.WriteLine("Erreur : les données json ne sont pas valides");
+                return null;
+            }
+
+            return listePizzas;
+        }
+
+        static void Main(string[] args)
+        {
+            var filename = "listePizzas.json";
+
+            //GetPizzasFromCode();
+            // var listePizzas = GetPizzasFromFile("listePizzas.json");
+
+            var listePizzas = GetPizzasFromUrl("http://codeavecjonathan.com/res/pizzas2.json");
+
 
             foreach (var pizza in listePizzas)
             {
                 pizza.Afficher();
             }
-
-            
-
         }
     }
 }

@@ -30,3 +30,5 @@ F:\Udemy\CSharp\pizza\pizzas_POO\pizza\obj\Debug\net5.0\pizza.dll
 F:\Udemy\CSharp\pizza\pizzas_POO\pizza\obj\Debug\net5.0\ref\pizza.dll
 F:\Udemy\CSharp\pizza\pizzas_POO\pizza\obj\Debug\net5.0\pizza.pdb
 F:\Udemy\CSharp\pizza\pizzas_POO\pizza\obj\Debug\net5.0\pizza.genruntimeconfig.cache
+F:\Udemy\CSharp\pizza\pizzas_POO\pizza\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\Udemy\CSharp\pizza\pizzas_POO\pizza\obj\Debug\net5.0\pizza.csproj.CopyComplete

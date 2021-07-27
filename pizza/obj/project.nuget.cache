@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/7FLQSxlJQVUoDAu8NLdjz6sqPXyZk6elrbay5PN9wbbSxUNshW85UY8BpwmQqdnAmWYdZF/ssRLwfVSZvqRtA==",
+  "dgSpecHash": "QDR0SdxEtqvaQoe4fm9gTkr+r4QyELLSNGNJR2Z65wwste1bJS0jBhm5F0GlI5EC2oIF6FzHvFnF53R7nTqZUg==",
   "success": true,
   "projectFilePath": "F:\\Udemy\\CSharp\\pizza\\pizzas_POO\\pizza\\pizza.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ti-yo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
